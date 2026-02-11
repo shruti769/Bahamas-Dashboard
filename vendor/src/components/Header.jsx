@@ -13,7 +13,7 @@ export default function Header() {
       </div>
 
       <div className="flex items-center gap-4">
-        {/* 🔔 NAVIGATE */}
+        {/* NAVIGATE */}
         <button
           onClick={() => router.push("/notifications")}
           className="cursor-pointer text-xl hover:scale-110 transition"

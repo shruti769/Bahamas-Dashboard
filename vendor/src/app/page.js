@@ -51,7 +51,7 @@ export default function Home() {
           <h2 className="font-semibold text-lg">Top Performing Experience </h2>
 
           <Link
-            href="/orders"
+            href="/Inventory"
             className="inline-flex items-center px-4 py-2 text-sm font-sm text-white bg-[#3D90BB] rounded-lg"
           >
             View All
@@ -59,14 +59,14 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {bookings.map((booking) => (
+          {bookings.slice(0,4).map((booking) => (
             <BookingCard key={booking.id} booking={booking} />
           ))}
         </div>
       </section>
 
       {/* ACTIONS + INFO */}
-      <section className="flex flex-col sm:flex-row gap-4 mt-12 pr-6 pl-3">
+      <section className="flex flex-col sm:flex-row gap-4 mt-12 mb-4 pr-6 pl-3">
         <UpcomingBookings />
         <div className="lg:col-span-2">
           <Notifications />

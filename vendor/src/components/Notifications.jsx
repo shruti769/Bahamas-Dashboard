@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const notifications = [
   {
     type: "new",
@@ -34,9 +36,9 @@ export default function Notifications() {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-semibold">Notification</h2>
-        <button className="bg-[#3D90BB] text-white px-4 py-2 rounded-md text-sm">
+        <Link href="/notifications" className="bg-[#3D90BB] text-white px-4 py-2 rounded-md text-sm">
           View All
-        </button>
+        </Link>
       </div>
 
       <div className="space-y-5">

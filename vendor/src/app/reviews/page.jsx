@@ -1,47 +1,89 @@
-import Image from "next/image";
-import { reviews } from "@/data/reviews";
+"use client";
 
-export default function ReviewsPage() {
+import { useState } from "react";
+
+import ReviewManagement from "@/components/ReviewManagement";
+import SupportSystem from "@/components/SupportSystem";
+import GuestCoordination from "@/components/GuestCoordination";
+import { Search } from "lucide-react";
+
+export default function ReviewPage() {
+  const [activeTab, setActiveTab] = useState("review");
+
+
   return (
-    <div>
-      <h1 className="text-xl font-semibold mb-6">Reviews</h1>
-
-      <div className="space-y-4">
-        {reviews.map((review) => (
-          <div
-            key={review.id}
-            className="bg-white rounded-xl shadow-sm p-4 flex gap-4"
+    <div className="bg-[#F0F0F0] min-h-screen p-6">
+      <div className="flex justify-between">
+        {/* Tabs */}
+        <div className="flex gap-2 mb-4">
+          <button
+            onClick={() => setActiveTab("guest")}
+            className={`px-6 py-2 text-sm rounded-lg flex items-center gap-2 transition-all
+    ${activeTab === "guest"
+                ? "bg-[#3D90BB] text-white"
+                : "border border-[#3D90BB] text-[#3D90BB] bg-white"
+              }`}
           >
-            {/* IMAGE */}
-            <div className="relative w-28 h-20 rounded-lg overflow-hidden flex-shrink-0">
-              <Image
-                src={review.image}
-                alt={review.title}
-                fill
-                className="object-cover"
-              />
-            </div>
+            <img
+              width={14} height={14}
+              src={
+                activeTab === "guest"
+                  ? "/images/guest-white.svg"
+                  : "/images/guest.svg"
+              }
+              alt="guest"
+            />
+            Guest Coordination
+          </button>
 
-            {/* CONTENT */}
-            <div className="flex-1">
-              <div className="flex justify-between items-center">
-                <h3 className="font-semibold">{review.title}</h3>
-                <span className="text-sm text-yellow-500">
-                  ⭐ {review.rating}
-                </span>
-              </div>
+          <button
+            onClick={() => setActiveTab("review")}
+            className={`px-6 py-2 text-sm rounded-lg flex items-center gap-2 transition-all
+            ${activeTab === "review"
+                ? "bg-[#3D90BB] text-white"
+                : "border border-[#3D90BB] text-[#3D90BB] bg-white"
+              }`}
+          >
+            <img width={14} height={14} src={
+              activeTab === "review"
+                ? "/images/review-tab-white.svg"
+                : "/images/review-tab.svg"
+            } />
+            Review Management
+          </button>
 
-              <p className="text-sm text-gray-600 mt-1">
-                {review.comment}
-              </p>
+          <button
+            onClick={() => setActiveTab("support")}
+            className={`px-6 py-2 text-sm rounded-lg flex items-center gap-2 transition-all
+            ${activeTab === "support"
+                ? "bg-[#3D90BB] text-white"
+                : "border border-[#3D90BB] text-[#3D90BB] bg-white"
+              }`}
+          >
+            <img width={14} height={14} src={
+              activeTab === "support"
+                ? "/images/support-white.svg"
+                : "/images/support.svg"
+            } />
+            Support System
+          </button>
+        </div>
 
-              <div className="text-xs text-gray-400 mt-2">
-                {review.reviewer} · {review.date}
-              </div>
-            </div>
-          </div>
-        ))}
+        {/*  Search */}
+        <div className="relative">
+          <Search className="absolute left-3 top-2.5 w-4 h-4 text-[#666666]" />
+          <input
+            type="text"
+            placeholder="Search"
+
+            className="pl-9 pr-4 py-2 text-sm bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#3D90BB]/20"
+          />
+        </div>
       </div>
+      {/* Content */}
+      {activeTab === "review" && <ReviewManagement />}
+      {activeTab === "support" && <SupportSystem />}
+      {activeTab === "guest" && <GuestCoordination />}
     </div>
   );
 }

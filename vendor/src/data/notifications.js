@@ -1,30 +1,29 @@
 export const notifications = [
   {
-    id: 1,
+    type: "new",
+    name: "Rita Sharma",
     message:
-      "Your booking for Lorem Ipsum has been confirmed successfully.",
-    type: "booking",
-    time: "2 hours ago",
+      "booked a Thailand trip for 4 travelers on 20 Dec.",
+    time: "6 March 2034 | 12:12 AM",
   },
   {
-    id: 2,
-    message:
-      "Vendor has updated the itinerary for your upcoming trip.",
-    type: "update",
-    time: "1 day ago",
+    type: "inquiry",
+    name: "Inayat Kapoor",
+    message: "added a Inquiry.",
+    time: "6 March 2034 | 12:12 AM",
   },
   {
-    id: 3,
+    type: "cancel",
+    name: "Anuradha Verma",
     message:
-      "Your payment was received successfully.",
-    type: "payment",
-    time: "3 days ago",
+      "a Thailand trip for 4 travelers on 20 Dec.",
+    time: "Today | 01:12 PM",
   },
   {
-    id: 4,
+    type: "booked",
+    name: "Rita Sharma",
     message:
-      "Reminder: Your trip starts in 2 days.",
-    type: "reminder",
-    time: "5 days ago",
+      "booked a Thailand trip for 4 travelers on 20 Dec.",
+    time: "6 March 2034 | 12:12 AM",
   },
 ];

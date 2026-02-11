@@ -13,6 +13,12 @@ const poppins = Poppins({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={poppins.variable}>
+        <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body
         
       className="bg-[#F0F0F0]">

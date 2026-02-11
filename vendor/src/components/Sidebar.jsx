@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 const menu = [
   { path: "/", label: "Performance Overview", icon: "/images/performance.svg" },
-  { path: "/inventory", label: "Experience & Inventory Management", icon: "/images/Order.svg" },
+  { path: "/Inventory", label: "Experience & Inventory Management", icon: "/images/Order.svg" },
    { path: "/reservations", label: "Reservation & Order Management", icon: "/images/reservation.svg" },
    { path: "/financial-payouts", label: "Financials & Payouts", icon: "/images/financial.svg" },
   { path: "/reviews", label: "Communication & Reviews", icon: "/images/reviews.svg" },

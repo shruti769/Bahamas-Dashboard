@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const bookings = {
   today: [
     {
@@ -48,9 +50,13 @@ export default function UpcomingBookings() {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-semibold">Upcoming Bookings</h2>
-        <button className="bg-[#3D90BB] text-white px-4 py-2 rounded-md text-sm">
-          View All
-        </button>
+      
+         <Link
+            href="/reservations"
+            className="inline-flex items-center px-4 py-2 text-sm font-sm text-white bg-[#3D90BB] rounded-lg"
+          >
+            View All
+          </Link>
       </div>
 
       <Section title="Today" data={bookings.today} />
