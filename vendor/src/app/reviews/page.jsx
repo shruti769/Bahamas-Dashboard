@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 
-import ReviewManagement from "@/components/ReviewManagement";
-import SupportSystem from "@/components/SupportSystem";
-import GuestCoordination from "@/components/GuestCoordination";
+import ReviewManagement from "@/app/reviews/ReviewManagement";
+import SupportSystem from "@/app/reviews/SupportSystem";
+import GuestCoordination from "@/app/reviews/GuestCoordination";
 import { Search } from "lucide-react";
 
 export default function ReviewPage() {

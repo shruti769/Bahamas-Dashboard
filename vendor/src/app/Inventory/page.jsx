@@ -13,11 +13,15 @@ export default function Inventory() {
   const itemsPerPage = 8;
 
   // 🔍 Filter bookings
-  const filteredBookings = useMemo(() => {
-    return bookings.filter((booking) =>
-      booking.title?.toLowerCase().includes(search.toLowerCase())
-    );
-  }, [search]);
+const filteredBookings = useMemo(() => {
+  const query = search.toLowerCase();
+
+  return bookings.filter((booking) =>
+    [booking.name, booking.location, booking.id, booking.email]
+      .some(field => field?.toLowerCase().includes(query))
+  );
+}, [search]);
+
 
   const totalPages = Math.ceil(filteredBookings.length / itemsPerPage);
 

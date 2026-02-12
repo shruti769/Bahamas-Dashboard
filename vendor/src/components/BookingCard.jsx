@@ -9,29 +9,30 @@ export default function BookingCard({ booking }) {
 
   return (
     <>
-      <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+      <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-lg transition-all duration-300">
+        
         {/* IMAGE */}
-        <div className="relative h-36 w-full rounded-lg overflow-hidden">
+        <div className="relative h-36 w-full rounded-xl overflow-hidden group">
           <Image
             src={booking.image}
-            alt={booking.title}
+            alt={`${booking.name} booking at ${booking.location}`}
             fill
-            className="object-cover"
+            className="object-cover group-hover:scale-105 transition duration-500"
           />
         </div>
 
-        {/* TITLE */}
+        {/* NAME */}
         <h3 className="mt-3 text-sm font-semibold text-gray-800">
-          {booking.title}
+          {booking.name}
         </h3>
 
         {/* PRICE */}
-        <p className="text-[#3D90BB] font-semibold text-sm mt-0.5">
-          ${booking.price}
+        <p className="text-[#3D90BB] font-semibold text-sm mt-1">
+          {booking.price}
         </p>
 
         {/* DETAILS */}
-        <div className="text-xs text-gray-500 mt-3 space-y-1 border-t border-[#E9EBED] pt-4">
+        <div className="text-xs text-gray-500 mt-4 space-y-2 border-t border-[#E9EBED] pt-4">
           <div className="flex justify-between">
             <span>Time</span>
             <span>{booking.time}</span>
@@ -51,7 +52,7 @@ export default function BookingCard({ booking }) {
         {/* BUTTON */}
         <button
           onClick={() => setOpen(true)}
-          className="mt-4 w-full bg-[#3D90BB] text-white py-2 rounded-lg text-sm font-regular hover:opacity-90 transition"
+          className="mt-4 w-full bg-[#3D90BB] text-white py-2 rounded-xl text-sm font-medium hover:opacity-90 transition"
         >
           View Itinerary
         </button>
