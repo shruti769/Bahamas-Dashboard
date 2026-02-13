@@ -3,13 +3,22 @@
 import { useState } from "react";
 import Image from "next/image";
 import ItineraryModal from "./ItineraryModal";
+import ViewItineraryButton from "./ViewItineraryButton";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
 
 export default function BookingCard({ booking }) {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow">
+      <div
+        className={`${poppins.className} bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow`}
+      >
         {/* IMAGE */}
         <div className="relative h-36 w-full rounded-xl overflow-hidden">
           <Image
@@ -21,17 +30,20 @@ export default function BookingCard({ booking }) {
         </div>
 
         {/* TITLE */}
-        <h3 className="mt-3 text-sm font-semibold text-gray-800">
+        <h3 className="mt-3 text-[15px] font-semibold text-gray-800">
           {booking.title}
         </h3>
 
         {/* PRICE */}
-        <p className="text-[#3D90BB] font-semibold text-sm mt-0.5">
+        <p className="text-[#3D90BB] font-bold text-[15px] mt-1">
           ${booking.price}
         </p>
 
+        {/* THIN HORIZONTAL LINE */}
+        <div className="border-t border-[#0000001C] mt-3"></div>
+
         {/* DETAILS */}
-        <div className="text-xs text-gray-500 mt-3 space-y-1">
+        <div className="text-[11px] font-normal text-gray-500 mt-3 space-y-1">
           <div className="flex justify-between">
             <span>Time</span>
             <span>{booking.time}</span>
@@ -49,12 +61,9 @@ export default function BookingCard({ booking }) {
         </div>
 
         {/* BUTTON */}
-        <button
-          onClick={() => setOpen(true)}
-          className="mt-4 w-full bg-[#3D90BB] text-white py-2 rounded-lg text-sm font-medium hover:opacity-90 transition"
-        >
-          View Itinerary
-        </button>
+        <div className="mt-4">
+          <ViewItineraryButton onClick={() => setOpen(true)} />
+        </div>
       </div>
 
       {/* MODAL */}

@@ -1,32 +1,33 @@
-export const reviews = [
+// data/reviews.js
+
+const reviews = [
   {
-    id: "r1",
-    title: "Island Escape",
-    image: "/images/island.jpg",
-    rating: 4.8,
-    reviewer: "John Doe",
-    date: "March 2024",
-    comment:
-      "Amazing experience! Crystal clear water, great host, and everything was well organized.",
-  },
-  {
-    id: "r2",
-    title: "Ocean Adventure",
-    image: "/images/island.jpg",
-    rating: 4.6,
-    reviewer: "Sarah Smith",
-    date: "February 2024",
-    comment:
-      "Beautiful location and smooth booking process. Would definitely recommend.",
-  },
-  {
-    id: "r3",
-    title: "Island Retreat",
-    image: "/images/island.jpg",
+    id: 1,
+    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop",
+    title: "Island",
     rating: 4.9,
-    reviewer: "Michael Brown",
-    date: "January 2024",
-    comment:
-      "One of the best trips I’ve ever taken. Everything matched the description perfectly.",
+    reviewCount: 2223,
+    description:
+      "This place is exactly like the picture posted on Chisfis. Great service, we had a great stay! This place is exactly like the picture posted on Chisfis.",
+  },
+  {
+    id: 2,
+    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop",
+    title: "Place",
+    rating: 3,
+    reviewCount: 2223,
+    description:
+      "This place is exactly like the picture posted on Chisfis. Great service, we had a great stay! This place is exactly like the picture posted on Chisfis.",
+  },
+  {
+    id: 3,
+    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop",
+    title: "Anything",
+    rating: 4.9,
+    reviewCount: 2223,
+    description:
+      "This place is exactly like the picture posted on Chisfis. Great service, we had a great stay! This place is exactly like the picture posted on Chisfis.",
   },
 ];
+
+export default reviews;
