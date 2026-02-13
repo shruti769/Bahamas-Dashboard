@@ -8,7 +8,7 @@ import GuestCoordination from "@/app/reviews/GuestCoordination";
 import { Search } from "lucide-react";
 
 export default function ReviewPage() {
-  const [activeTab, setActiveTab] = useState("review");
+  const [activeTab, setActiveTab] = useState("guest");
 
 
   return (
